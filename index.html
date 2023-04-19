@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="author" content="Ruiz Sierra Luis Antonio">
+  <title>Menu - Flamingos</title>
+
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital@1&display=swap" rel="stylesheet"> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+
+  <!-- <link rel="stylesheet" href="css/style.css" type="text/css"> -->
+  <style>
+    body {
+  /* font-family: 'Averia Libre', cursive; */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 0.8rem;
+}
+
+.container-logo {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid darkgray;
+  height: 95vh;
+
+}
+
+.logo {
+ text-align: center;
+}
+
+.texto-logo {
+  display: block;
+  width: 100%;
+  /* border: 1px solid red; */
+  /* padding: 100px 0; */
+  margin-top: 100px;
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  /* text-align: center; */
+  color: darkgray;
+  letter-spacing: 25px;
+}
+
+.logo-flamingos {
+  margin-top: 150px;
+  
+  width: 90%;
+  /* border: 1px solid green; */
+}
+
+.main-container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 400px;
+  margin-bottom: 20%;
+}
+
+.title-section {
+  margin: 2rem auto;
+  font-family: 'Averia Libre', cursive;
+  font-size: 2rem;
+  text-align: center;
+  color: #E1338B;
+}
+
+td {
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.title-section span {
+  font-size: 1.2rem;
+}
+
+.name-product {
+  font-weight: bold;
+}
+
+.english {
+  font-style: italic;
+}
+
+.price-colum {
+  padding-left: 10px;
+  vertical-align: top;
+  text-align: right;
+}
+
+.comment {
+  margin: 1.2rem auto;
+  /* text-align: center; */
+  font-weight: bold;
+}
+
+  /* border: 1px solid red; */
+
+  * {
+  padding: 0;
+  margin: 0;
+}
+
+.fabs {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.action {
+  background: rgb(255, 0, 128);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 0 5px 7px 0px gray;
+  transition: background-color 0.4s ease-in-out;
+}
+
+.action i {
+  position: absolute;
+  color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.action:hover {
+  background-color: rgb(255, 103, 179);
+}
+
+.btn {
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.btn i {
+  position: absolute;
+  font-size: 18px;
+  color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btns {
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 5px;
+  height: 35px;
+  width: 35px;
+  transition: 0.3s ease-in-out;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.btns.open {
+  bottom: 50px;
+}
+
+.btn:nth-child(1) {
+  background: #3b5998
+}
+.btn:nth-child(2) {
+  background: #55acee
+}
+.btn:nth-child(3) {
+  background: #4dc247
+}
+.btn:nth-child(4) {
+  background:#E1306C
+}
+  </style>
+
+</head>
+<body>
+  <div class="fabs" onclick="toggleBtn()">
+    <div class="action">
+      <i class="fas fa-plus" id="add"></i>
+      <i class="fas fa-times" id="remove" style="display: none"></i>
+    </div>
+    <div class="btns">
+      <a href="#" class="btn"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="btn"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="btn"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" class="btn"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="container-logo">
+      <div class="logo">
+        <img class="logo-flamingos" src="img/flamingos.svg" alt="">
+        <div class="texto-logo">
+          <span>MENU</span>
+        </div>
+      </div>
+      
+    </div>
+    <div class="section-container">
+      <div class="container">
+        <div class="container-title">
+          <div class="title-section">
+            Desayuno / Breakfast <br/> All day
+            <br>
+            <span>8:30am to 12:00pm</span>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="table-container">
+          <table>
+            <tr>
+              <td>
+                <span class="name-product">Molletes</span>
+                <br>
+                <span class="description-product spanish">Dos rebanadas de chapatas tostadas en mantequilla de ajo y epazote, cubiertas de frijoles refritos, guacamole y pico de gallo (cebolla,jitomate y chile finamente picado) y queso. </span>
+                <br>
+                <span class="description-product english">Two slices of toasted chapatas in garlic and epazote butter, covered with refried beans, guacamole and pico de gallo (onion, tomato and finely chopped chili) and cheese</span>
+              </td>
+              <td class="price-colum">
+                <span class="price-product">$90</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="name-product">Omelette vegetariano <br> Vegetarian omelette</span>
+                <br>
+                <span class="description-product spanish">Cebolla, pimientos, champiñones, elote y queso Oaxaca.</span>
+                <br>
+                <span class="description-product english">Onion, peppers, mushrooms, sweet corn, and local cheese.</span>
+              </td>
+              <td class="price-colum">
+                <span class="price-product">$90</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="name-product">Omelette Especial <br> Special omelette</span>
+                <br>
+                <span class="description-product spanish">Cebolla, pimientos, tocino ahumado, salchicha y queso gouda.</span>
+                <br>
+                <span class="description-product english">Onion, peppers, smoked bacon, sausage, and gouda cheese.</span>
+              </td>
+              <td class="price-colum">
+                <span class="price-product">$115</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="name-product">Bowl frutal <br> Fruit bowl</span>
+                <br>
+                <span class="description-product spanish">Yogurt griego con plátano, fruta de temporada y granola de la casa.</span>
+                <br>
+                <span class="description-product english">Greek yogurt with banana, seasonal fruits and house granola.</span>
+              </td>
+              <td class="price-colum">
+                <span class="price-product">$90</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="name-product">Toast de mantequilla de cacahuate, plátano, frutas de temporada y granola de la casa <br> Peanut butter, banana, seasonal fruits and house granola</span>
+                <br>
+                <span class="description-product spanish"></span>
+                <br>
+                <span class="description-product english"></span>
+              </td>
+              <td class="price-colum">
+                <span class="price-product">$50</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="name-product">Toast de aguacate, espinaca, cebolla morada, salsa macha y ajonjolí <br> Avocado, spinach, red onion, salsa macha, and sesame toast</span>
+                <br>
+                <span class="description-product spanish"></span>
+                <br>
+                <span class="description-product english"></span>
+              </td>
+              <td class="price-colum">
+                <span class="price-product">$70</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="name-product">Hot Cakes</span>
+                <br>
+                <span class="description-product spanish">Tres piezas de hot cakes acompañados de mantequilla, miel y fruta de temporada.</span>
+                <br>
+                <span class="description-product english">Three pieces of hot cakes accompanied by butter, honey and seasonal fruit.</span>
+              </td>
+              <td class="price-colum">
+                <span class="price-product">$90</span>
+              </td>
+            </tr>
+
+            <!-- <tr>
+              <td>
+                <span class="name-product"></span>
+                <br>
+                <span class="description-product spanish"></span>
+                <br>
+                <span class="description-product english"></span>
+              </td>
+              <td class="price-colum">
+                <span class="price-product"></span>
+              </td>
+            </tr> -->
+
+         
+            
+          </table>
+          <div class="comment">
+            <span class="description-product spanish">Con $25 más te damos un jugo y café para acompañar cualquiera de los desayunos.</span>
+            <br>
+            <span class="description-product english">With $25 more we give you a juice and coffee to accompany any of the breakfasts.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="footer-container">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- <script src="js/script.js"></script> -->
+  <script>
+    
+function toggleBtn() {
+  const Btns = document.querySelector(".btns");
+  const add = document.getElementById("add");
+  const remove = document.getElementById("remove");
+  const btn = document.querySelector(".btns").querySelectorAll("a");
+  Btns.classList.toggle("open");
+  if (Btns.classList.contains("open")) {
+    remove.style.display = "block";
+    add.style.display = "none";
+    btn.forEach((e, i) => {
+      setTimeout(() => {
+        bottom = 40 * i;
+        e.style.bottom = bottom + "px";
+        console.log(e);
+      }, 100 * i);
+    });
+  } else {
+    add.style.display = "block";
+    remove.style.display = "none";
+    btn.forEach((e, i) => {
+      e.style.bottom = "0px";
+    });
+  }
+}
+
+  </script>
+</body>
+</html>
